@@ -25,6 +25,5 @@ jobs:
           gem install bundler
           bundle install
           bundle exec danger
-          bundle full index
         env:
           DANGER_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
