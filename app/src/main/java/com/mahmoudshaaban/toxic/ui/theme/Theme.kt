@@ -7,7 +7,7 @@ import androidx.compose.runtime.Composable
 
 
 @Composable
-fun ToxicTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable() () -> Unit) {
+fun ToxicTheme(content: @Composable() () -> Unit) {
     val colors = lightColorPalette
 
     MaterialTheme(
