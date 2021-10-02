@@ -1,10 +1,4 @@
-# Stream 
-
-This page is a recording of all twitch streams related to the Toxic Project 
-
-*[Project History](#Project Creation)
-
-Date 2/10/2022
-
-Prs : 
-*  Ktlint : for formatted Codea base 
+PRs:
+* GitHub Actions: https://github.com/AdamMc331/TOA/pull/27
+* Danger: https://github.com/AdamMc331/TOA/pull/29
+* Ktlint: https://github.com/AdamMc331/TOA/pull/30
