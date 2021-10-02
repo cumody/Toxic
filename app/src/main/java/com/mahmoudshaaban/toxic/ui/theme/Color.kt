@@ -1,3 +1,6 @@
+// this we tell detekt don't run the magic number on this file
+@file:Suppress("MagicNumber")
+
 package com.mahmoudshaaban.toxic.ui.theme
 
 import androidx.compose.ui.graphics.Color
