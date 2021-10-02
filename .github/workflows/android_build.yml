@@ -21,7 +21,7 @@ jobs:
         run: ./gradlew assemble
 
       - name: Run Tests
-        run: ./gradlew test
+        run: .\gradlew test
 
       - name: Static Analysis
-        run: ./gradlew ktlintCheck detekt
+        run: .\gradlew ktlintCheck detekt
