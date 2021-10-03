@@ -27,6 +27,7 @@ import com.mahmoudshaaban.toxic.ui.theme.ToxicTheme
  * @param[modifier] An optional [Modifier] to configure this component.
  * @param[backgroundColor] The color of the button in an enabled state.
  */
+
 @Composable
 fun PrimaryButton(
     modifier: Modifier = Modifier,
