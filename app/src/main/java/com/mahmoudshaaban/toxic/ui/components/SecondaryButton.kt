@@ -25,6 +25,7 @@ import com.mahmoudshaaban.toxic.ui.theme.ToxicTheme
  * @param[onClick] A callback invoked when the user clicks the button.
  * @param[modifier] An optional [Modifier] to configure this component.
  */
+
 @Composable
 fun SecondaryButton(
     modifier: Modifier = Modifier,
