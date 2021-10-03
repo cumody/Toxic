@@ -4,14 +4,12 @@ import android.content.res.Configuration
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.material.OutlinedTextField
-import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.mahmoudshaaban.toxic.R
-import com.mahmoudshaaban.toxic.ui.theme.ButtonShape
 import com.mahmoudshaaban.toxic.ui.theme.TextFieldShape
 import com.mahmoudshaaban.toxic.ui.theme.ToxicTheme
 
@@ -41,7 +39,6 @@ fun ToxicTextField(
             .heightIn(dimensionResource(id = R.dimen.text_field_height))
             .fillMaxWidth()
     )
-
 }
 
 @Preview(
@@ -57,9 +54,10 @@ fun ToxicTextField(
 private fun ToxicTextFieldPreview() {
     androidx.compose.material.Surface() {
         ToxicTheme {
-            ToxicTextField(text = "TOA Text Field", onTextChanged = {},
-                textLabel = "Label")
+            ToxicTextField(
+                text = "TOA Text Field", onTextChanged = {},
+                textLabel = "Label"
+            )
         }
     }
-
 }

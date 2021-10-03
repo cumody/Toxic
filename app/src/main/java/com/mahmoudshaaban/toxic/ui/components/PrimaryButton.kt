@@ -18,7 +18,6 @@ import com.mahmoudshaaban.toxic.R
 import com.mahmoudshaaban.toxic.ui.theme.ButtonShape
 import com.mahmoudshaaban.toxic.ui.theme.ToxicTheme
 
-
 /**
  * This is a custom [Button] that provides the shape and styling expected
  * in the TOA application.
