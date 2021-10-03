@@ -6,7 +6,9 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults.buttonColors
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Surface
 import androidx.compose.material.Text
+import androidx.compose.material.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -19,28 +21,21 @@ import com.mahmoudshaaban.toxic.ui.theme.ButtonShape
 import com.mahmoudshaaban.toxic.ui.theme.ToxicTheme
 
 @Composable
-fun PrimaryButton(
+fun SecondaryButton(
     modifier: Modifier = Modifier,
     text: String = "",
     onclick: () -> Unit = {},
-    color: Color = MaterialTheme.colors.primary,
-    textColor : Color = MaterialTheme.colors.onPrimary
 ) {
 
-    val buttonColors = buttonColors(
-        backgroundColor = color,
-        contentColor = textColor
-    )
-
-    Button(
+    TextButton(
         onClick = { onclick },
-        colors = buttonColors,
         shape = ButtonShape,
         modifier = modifier
             .height(dimensionResource(id = R.dimen.buttonHeight))
             .fillMaxWidth()
     ) {
         Text(text = text.toUpperCase(Locale.current))
+
     }
 }
 
@@ -54,8 +49,14 @@ fun PrimaryButton(
 )
 @Composable
 @Suppress("UnusedPrivateMember")
-private fun PrimaryButtonPreview() {
+private fun SecondaryButtonPreview(){
     ToxicTheme {
-        PrimaryButton(text = "Primary Button")
+        Surface() {
+            SecondaryButton(text = "Secondary Button")
+        }
     }
+
 }
+
+
+
