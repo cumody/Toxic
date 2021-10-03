@@ -8,6 +8,7 @@ buildscript {
         // https://github.com/detekt/detekt/releases
         detektVersion = "1.17.0"
 
+
     }
     repositories {
         google()
