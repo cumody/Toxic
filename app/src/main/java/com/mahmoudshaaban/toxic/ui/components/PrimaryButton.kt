@@ -18,6 +18,16 @@ import com.mahmoudshaaban.toxic.R
 import com.mahmoudshaaban.toxic.ui.theme.ButtonShape
 import com.mahmoudshaaban.toxic.ui.theme.ToxicTheme
 
+
+/**
+ * This is a custom [Button] that provides the shape and styling expected
+ * in the TOA application.
+ *
+ * @param[text] The text inside the button.
+ * @param[onClick] A callback invoked when the user clicks the button.
+ * @param[modifier] An optional [Modifier] to configure this component.
+ * @param[backgroundColor] The color of the button in an enabled state.
+ */
 @Composable
 fun PrimaryButton(
     modifier: Modifier = Modifier,
