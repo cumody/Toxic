@@ -3,9 +3,7 @@ package com.mahmoudshaaban.toxic.ui.components
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Button
-import androidx.compose.material.ButtonColors
 import androidx.compose.material.ButtonDefaults.buttonColors
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
@@ -16,15 +14,15 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.text.intl.Locale
 import androidx.compose.ui.text.toUpperCase
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import com.mahmoudshaaban.toxic.R
+import com.mahmoudshaaban.toxic.ui.theme.ButtonShape
 import com.mahmoudshaaban.toxic.ui.theme.ToxicTheme
 
 @Composable
 fun PrimaryButton(
     modifier: Modifier = Modifier,
     text: String = "",
-    onclick: () -> Unit = {} ,
+    onclick: () -> Unit = {},
     color: Color = MaterialTheme.colors.primary
 ) {
 
@@ -35,18 +33,14 @@ fun PrimaryButton(
     Button(
         onClick = { onclick },
         colors = buttonColors,
-        shape = RoundedCornerShape(50),
+        shape = ButtonShape,
         modifier = modifier
             .height(dimensionResource(id = R.dimen.buttonHeight))
             .fillMaxWidth()
     ) {
         Text(text = text.toUpperCase(Locale.current))
     }
-
 }
-
-
-
 
 @Preview(
     name = "Night Mode",
@@ -61,6 +55,4 @@ private fun PrimaryButtonPreview() {
     ToxicTheme {
         PrimaryButton(text = "Primary Button")
     }
-
 }
-
