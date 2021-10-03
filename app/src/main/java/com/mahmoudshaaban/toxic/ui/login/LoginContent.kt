@@ -49,33 +49,66 @@ fun LoginContent(viewState: LoginViewState) {
 
             Spacer(modifier = Modifier.weight(1F))
 
-            ToxicTextField(
+            UsernameInput(
                 text = viewState.userName,
-                onTextChanged = {}, textLabel = stringResource(R.string.username)
-                )
+                onTextChanged = {}
+            )
 
-                VerticalSpacer(height = 12.dp)
+            VerticalSpacer(height = 12.dp)
 
-                ToxicTextField(
-                    text = viewState.password,
-                    onTextChanged = {}, textLabel = stringResource(R.string.password)
-                    )
+            PasswordInput(
+                text = viewState.password,
+                onTextChanged = {}
+            )
 
-                    VerticalSpacer(height = 48.dp)
+            VerticalSpacer(height = 48.dp)
 
-                    PrimaryButton(
-                        text = stringResource(R.string.log_in),
-                        onclick = {},
-                    )
-                    VerticalSpacer(height = 12.dp)
+            LoginButton()
 
-                    SecondaryButton(
-                        text = stringResource(R.string.sign_up),
-                        onclick = {},
-                    )
-                }
-            }
+            VerticalSpacer(height = 12.dp)
+
+            SignupButton()
         }
+    }
+}
+
+@Composable
+private fun SignupButton() {
+    SecondaryButton(
+        text = stringResource(R.string.sign_up),
+        onclick = {},
+    )
+}
+
+@Composable
+private fun LoginButton() {
+    PrimaryButton(
+        text = stringResource(R.string.log_in),
+        onclick = {},
+    )
+}
+
+@Composable
+private fun PasswordInput(
+    text: String,
+    onTextChanged: (String) -> Unit
+) {
+    ToxicTextField(
+        text = text,
+        onTextChanged = onTextChanged, textLabel = stringResource(R.string.password)
+    )
+}
+
+@Composable
+private fun UsernameInput(
+    text: String,
+    onTextChanged: (String) -> Unit
+) {
+    ToxicTextField(
+        text = text,
+        onTextChanged = onTextChanged, textLabel = stringResource(R.string.username)
+    )
+}
 
 @Composable
 private fun AppLogo() {
@@ -85,24 +118,25 @@ private fun AppLogo() {
         modifier = Modifier.fillMaxWidth(APP_LOGO_WIDTH_PERCENTAGE)
     )
 }
+
 @Preview(
-            name = "Night Mode - Empty",
-            uiMode = Configuration.UI_MODE_NIGHT_YES
-        )
-        @Preview(
-            name = "Day Mode - Empty",
-            uiMode = Configuration.UI_MODE_NIGHT_NO
-        )
-        @Composable
-        @Suppress("UnusedPrivateMember")
-        private fun EmptyLoginScreenPreview() {
+    name = "Night Mode - Empty",
+    uiMode = Configuration.UI_MODE_NIGHT_YES
+)
+@Preview(
+    name = "Day Mode - Empty",
+    uiMode = Configuration.UI_MODE_NIGHT_NO
+)
+@Composable
+@Suppress("UnusedPrivateMember")
+private fun EmptyLoginScreenPreview() {
 
-            val viewState = LoginViewState(
-                userName = "",
-                password = ""
-            )
+    val viewState = LoginViewState(
+        userName = "",
+        password = ""
+    )
 
-            ToxicTheme {
-                LoginContent(viewState)
-            }
-        }
+    ToxicTheme {
+        LoginContent(viewState)
+    }
+}
