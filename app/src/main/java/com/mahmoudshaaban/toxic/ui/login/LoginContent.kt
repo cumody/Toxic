@@ -28,11 +28,21 @@ private const val APP_LOGO_WIDTH_PERCENTAGE = 0.75F
 /**
  * This[LoginContent] handles all configuration that happens for this screen
  * @param[viewState] the current state of the screen to render
+ * @param[onUsernameChanged] A callback invoked when the user enters their username.
+ * @param[onPasswordChanged] A callback invoked when the user enter their password.
+ * @param[onLoginClicked] A callback invoked when the user clicks the logins button.
+ * @paramp[onSignUpClicked] A callback invoked when the user clicks the sign up button
  *
  */
 
 @Composable
-fun LoginContent(viewState: LoginViewState) {
+fun LoginContent(
+    viewState: LoginViewState,
+    onUsernameChanged: (String) -> Unit,
+    onPasswordChanged: (String) -> Unit,
+    onLoginClicked: () -> Unit,
+    onSignUpClicked: () -> Unit
+) {
 
     Surface() {
         Column(
@@ -51,40 +61,48 @@ fun LoginContent(viewState: LoginViewState) {
 
             UsernameInput(
                 text = viewState.userName,
-                onTextChanged = {}
+                onTextChanged = onUsernameChanged
             )
 
             VerticalSpacer(height = 12.dp)
 
             PasswordInput(
                 text = viewState.password,
-                onTextChanged = {}
+                onTextChanged = onPasswordChanged
             )
 
             VerticalSpacer(height = 48.dp)
 
-            LoginButton()
+            LoginButton(
+                onClick = onLoginClicked
+            )
 
             VerticalSpacer(height = 12.dp)
 
-            SignupButton()
+            SignupButton(
+                onClick = onSignUpClicked
+            )
         }
     }
 }
 
 @Composable
-private fun SignupButton() {
+private fun SignupButton(
+    onClick: () -> Unit
+) {
     SecondaryButton(
         text = stringResource(R.string.sign_up),
-        onclick = {},
+        onclick = onClick,
     )
 }
 
 @Composable
-private fun LoginButton() {
+private fun LoginButton(
+    onClick: () -> Unit
+) {
     PrimaryButton(
         text = stringResource(R.string.log_in),
-        onclick = {},
+        onclick = onClick,
     )
 }
 
@@ -137,6 +155,12 @@ private fun EmptyLoginScreenPreview() {
     )
 
     ToxicTheme {
-        LoginContent(viewState)
+        LoginContent(
+            viewState = viewState,
+            onUsernameChanged = {},
+            onPasswordChanged = {},
+            onLoginClicked = {},
+            onSignUpClicked = {}
+        )
     }
 }
