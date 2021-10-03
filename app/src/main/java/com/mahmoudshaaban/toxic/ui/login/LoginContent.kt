@@ -7,7 +7,6 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -24,7 +23,6 @@ import com.mahmoudshaaban.toxic.ui.components.ToxicTextField
 import com.mahmoudshaaban.toxic.ui.core.VerticalSpacer
 import com.mahmoudshaaban.toxic.ui.theme.ToxicTheme
 
-
 private const val APP_LOGO_WIDTH_PERCENTAGE = 0.75F
 
 /**
@@ -36,8 +34,7 @@ private const val APP_LOGO_WIDTH_PERCENTAGE = 0.75F
 @Composable
 fun LoginContent(viewState: LoginViewState) {
 
-    Surface(
-    ) {
+    Surface() {
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -48,63 +45,64 @@ fun LoginContent(viewState: LoginViewState) {
 
             Spacer(modifier = Modifier.weight(1F))
 
-            Image(
-                painter = painterResource(id = R.drawable.ic_toxic_chekmark),
-                contentDescription = stringResource(R.string.app_logo_content_description),
-                modifier = Modifier.fillMaxWidth(APP_LOGO_WIDTH_PERCENTAGE)
-            )
+            AppLogo()
 
             Spacer(modifier = Modifier.weight(1F))
 
             ToxicTextField(
                 text = viewState.userName,
                 onTextChanged = {}, textLabel = stringResource(R.string.username)
-            )
+                )
 
-            VerticalSpacer(height = 12.dp)
+                VerticalSpacer(height = 12.dp)
 
-            ToxicTextField(
-                text = viewState.password,
-                onTextChanged = {}, textLabel = stringResource(R.string.password)
-            )
+                ToxicTextField(
+                    text = viewState.password,
+                    onTextChanged = {}, textLabel = stringResource(R.string.password)
+                    )
 
-            VerticalSpacer(height = 48.dp)
+                    VerticalSpacer(height = 48.dp)
 
-            PrimaryButton(
-                text = stringResource(R.string.log_in),
-                onclick = {},
-            )
-            VerticalSpacer(height = 12.dp)
+                    PrimaryButton(
+                        text = stringResource(R.string.log_in),
+                        onclick = {},
+                    )
+                    VerticalSpacer(height = 12.dp)
 
-            SecondaryButton(
-                text = stringResource(R.string.sign_up),
-                onclick = {},
-            )
+                    SecondaryButton(
+                        text = stringResource(R.string.sign_up),
+                        onclick = {},
+                    )
+                }
+            }
         }
-    }
-}
 
-
-@Preview(
-    name = "Night Mode - Empty",
-    uiMode = Configuration.UI_MODE_NIGHT_YES
-)
-@Preview(
-    name = "Day Mode - Empty",
-    uiMode = Configuration.UI_MODE_NIGHT_NO
-)
 @Composable
-@Suppress("UnusedPrivateMember")
-private fun EmptyLoginScreenPreview() {
-
-    val viewState = LoginViewState(
-        userName = "",
-        password = ""
+private fun AppLogo() {
+    Image(
+        painter = painterResource(id = R.drawable.ic_toxic_chekmark),
+        contentDescription = stringResource(R.string.app_logo_content_description),
+        modifier = Modifier.fillMaxWidth(APP_LOGO_WIDTH_PERCENTAGE)
     )
-
-    ToxicTheme {
-        LoginContent(viewState)
-    }
 }
+@Preview(
+            name = "Night Mode - Empty",
+            uiMode = Configuration.UI_MODE_NIGHT_YES
+        )
+        @Preview(
+            name = "Day Mode - Empty",
+            uiMode = Configuration.UI_MODE_NIGHT_NO
+        )
+        @Composable
+        @Suppress("UnusedPrivateMember")
+        private fun EmptyLoginScreenPreview() {
 
+            val viewState = LoginViewState(
+                userName = "",
+                password = ""
+            )
 
+            ToxicTheme {
+                LoginContent(viewState)
+            }
+        }
