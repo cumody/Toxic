@@ -5,4 +5,6 @@ PRs:
 * Detekt: 
 
 
-Creats LoginContent : https://github.com/cumody/Toxic/pull/13
+Creates LoginContent : https://github.com/cumody/Toxic/pull/13
+
+## Updating Login Content
