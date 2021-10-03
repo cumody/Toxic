@@ -38,7 +38,6 @@ fun PrimaryButton(
     textColor: Color = MaterialTheme.colors.onPrimary
 ) {
 
-
     val buttonColors = buttonColors(
         backgroundColor = backgroundColor,
     )

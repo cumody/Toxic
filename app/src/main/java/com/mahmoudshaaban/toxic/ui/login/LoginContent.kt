@@ -16,7 +16,6 @@ import com.mahmoudshaaban.toxic.ui.components.PrimaryButton
 import com.mahmoudshaaban.toxic.ui.components.SecondaryButton
 import com.mahmoudshaaban.toxic.ui.theme.ToxicTheme
 
-
 /**
  * This[LoginContent] handles all configuration that happens for this screen
  * @param[viewState] the current state of the screen to render
@@ -46,12 +45,10 @@ fun LoginContent(viewState: LoginViewState) {
             SecondaryButton(
                 text = "Sign up",
                 onclick = {},
-                contentColor = MaterialTheme.colors.onPrimary)
-            
+                contentColor = MaterialTheme.colors.onPrimary
+            )
         }
-        
     }
-
 }
 
 @Preview(
@@ -74,5 +71,4 @@ private fun EmptyLoginScreenPreview() {
     ToxicTheme {
         LoginContent(viewState = viewState)
     }
-
 }

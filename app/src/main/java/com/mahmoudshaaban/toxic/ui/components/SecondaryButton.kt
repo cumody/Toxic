@@ -36,7 +36,6 @@ fun SecondaryButton(
     contentColor: Color = MaterialTheme.colors.primary,
 ) {
 
-
     val buttonColors = textButtonColors(
         contentColor = contentColor,
     )
@@ -66,7 +65,7 @@ fun SecondaryButton(
 private fun SecondaryButtonPreview() {
     ToxicTheme {
         Surface() {
-            SecondaryButton(text = "Secondary Button",onclick = {})
+            SecondaryButton(text = "Secondary Button", onclick = {})
         }
     }
 }
