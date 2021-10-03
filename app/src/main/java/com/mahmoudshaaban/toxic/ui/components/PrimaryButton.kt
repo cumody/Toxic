@@ -34,8 +34,6 @@ fun PrimaryButton(
     text: String = "",
     onclick: () -> Unit = {},
     backgroundColor: Color = MaterialTheme.colors.primary,
-    color: Color = MaterialTheme.colors.primary,
-    textColor: Color = MaterialTheme.colors.onPrimary
 ) {
 
     val buttonColors = buttonColors(

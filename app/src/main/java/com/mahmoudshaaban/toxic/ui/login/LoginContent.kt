@@ -22,7 +22,7 @@ import com.mahmoudshaaban.toxic.ui.theme.ToxicTheme
  *
  */
 @Composable
-fun LoginContent(viewState: LoginViewState) {
+fun LoginContent() {
 
     Scaffold(
         backgroundColor = MaterialTheme.colors.primary
@@ -69,6 +69,6 @@ private fun EmptyLoginScreenPreview() {
     )
 
     ToxicTheme {
-        LoginContent(viewState = viewState)
+        LoginContent()
     }
 }
