@@ -1,19 +1,26 @@
 package com.mahmoudshaaban.toxic.ui.login
 
 import android.content.res.Configuration
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
+import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.mahmoudshaaban.toxic.R
 import com.mahmoudshaaban.toxic.ui.components.PrimaryButton
 import com.mahmoudshaaban.toxic.ui.components.SecondaryButton
+import com.mahmoudshaaban.toxic.ui.components.ToxicTextField
 import com.mahmoudshaaban.toxic.ui.theme.ToxicTheme
 
 /**
@@ -22,30 +29,52 @@ import com.mahmoudshaaban.toxic.ui.theme.ToxicTheme
  *
  */
 @Composable
-fun LoginContent() {
+fun LoginContent(viewState: LoginViewState) {
 
-    Scaffold(
-        backgroundColor = MaterialTheme.colors.primary
+    Surface(color = MaterialTheme.colors.background
     ) {
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(24.dp)
+                .padding(24.dp),
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
 
             Spacer(modifier = Modifier.weight(1F))
 
+            Image(
+                painter = painterResource(id = R.drawable.ic_toxic_chekmark),
+                contentDescription = "App Logo",
+                modifier = Modifier.fillMaxWidth(0.75F)
+            )
+
+            Spacer(modifier = Modifier.weight(1F))
+
+
+            ToxicTextField(
+                text = viewState.userName,
+                onTextChanged = {}, textLabel = "Username"
+            )
+
+
+            Spacer(modifier = Modifier.height(12.dp))
+
+            ToxicTextField(
+                text = viewState.password,
+                onTextChanged = {}, textLabel = "Password"
+            )
+
+            Spacer(modifier = Modifier.height(48.dp))
+
             PrimaryButton(
                 text = "Login In",
                 onclick = {},
-                backgroundColor = MaterialTheme.colors.secondary
             )
             Spacer(modifier = Modifier.height(12.dp))
 
             SecondaryButton(
                 text = "Sign up",
                 onclick = {},
-                contentColor = MaterialTheme.colors.onPrimary
             )
         }
     }
@@ -69,6 +98,6 @@ private fun EmptyLoginScreenPreview() {
     )
 
     ToxicTheme {
-        LoginContent()
+        LoginContent(viewState)
     }
 }
