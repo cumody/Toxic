@@ -12,8 +12,6 @@ sealed class LoginResult {
 
     object Success : LoginResult()
 
-    object InvalidCredentials : LoginResult()
-
     /**
      * this will be unsuccessful states when attempting to login
      */
