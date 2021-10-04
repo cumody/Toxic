@@ -33,7 +33,6 @@ class ProdCredentialUseCaseLoginTest {
         val useCase = ProdCredentialUseCaseLogin(loginRepository.mock)
         val userCaseResult = useCase(inputCredentials)
         assertThat(userCaseResult).isEqualTo(LoginResult.Success)
-
     }
 
     @Test
@@ -43,8 +42,7 @@ class ProdCredentialUseCaseLoginTest {
             password = Password("hunter2")
         )
 
-
-        val mockLoginResponse : Result<LoginResponse> = Result.Error(
+        val mockLoginResponse: Result<LoginResponse> = Result.Error(
             Throwable("Mahmoud fucked up")
         )
 
@@ -58,7 +56,6 @@ class ProdCredentialUseCaseLoginTest {
         val useCase = ProdCredentialUseCaseLogin(loginRepository.mock)
         val useCaseResult = useCase(inputCredentials)
         assertThat(useCaseResult).isEqualTo(LoginResult.Failure.Unknown)
-
     }
 
     @Test
@@ -68,8 +65,7 @@ class ProdCredentialUseCaseLoginTest {
             password = Password("hunter2")
         )
 
-
-        val mockLoginResponse : Result<LoginResponse> = Result.Error(
+        val mockLoginResponse: Result<LoginResponse> = Result.Error(
             InvalidCredentialsException()
         )
 
@@ -83,7 +79,5 @@ class ProdCredentialUseCaseLoginTest {
         val useCase = ProdCredentialUseCaseLogin(loginRepository.mock)
         val useCaseResult = useCase(inputCredentials)
         assertThat(useCaseResult).isEqualTo(LoginResult.Failure.InvalidCredentials)
-
     }
 }
-

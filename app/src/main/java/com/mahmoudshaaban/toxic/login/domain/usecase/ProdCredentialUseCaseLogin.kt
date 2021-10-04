@@ -6,7 +6,6 @@ import com.mahmoudshaaban.toxic.login.domain.model.InvalidCredentialsException
 import com.mahmoudshaaban.toxic.login.domain.model.LoginResult
 import com.mahmoudshaaban.toxic.login.domain.repository.LoginRepository
 
-
 /**
  * a concrete implementation of a [ProdCredentialUseCaseLogin] that will request logging in via the [loginRepository]
  */

@@ -8,13 +8,12 @@ import io.mockk.coEvery
 import io.mockk.mockk
 
 class FakeLoginRepository {
-    val mock : LoginRepository = mockk()
-
+    val mock: LoginRepository = mockk()
 
     fun mockLoginWithCredentials(
         credentials: Credentials,
         result: Result<LoginResponse>
-    ){
+    ) {
         coEvery {
             mock.loginWithCredentials(credentials)
         } returns result
