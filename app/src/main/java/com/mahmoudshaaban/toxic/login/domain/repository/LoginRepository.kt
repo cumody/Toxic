@@ -26,5 +26,4 @@ interface LoginRepository {
         authToken: String
     ) {
     }
-
 }
