@@ -18,4 +18,12 @@ interface LoginRepository {
     suspend fun loginWithCredentials(
         credentials: Credentials
     ): Result<LoginResponse>
+
+    /**
+     * Given an [authToken], store that somewhere so that it can be retrieved for authentication
+     */
+    suspend fun storeAuthToken(
+        authToken: String
+    ) {
+    }
 }

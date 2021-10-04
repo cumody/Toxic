@@ -4,13 +4,15 @@ import com.mahmoudshaaban.toxic.core.data.Result
 import com.mahmoudshaaban.toxic.login.domain.model.Credentials
 import com.mahmoudshaaban.toxic.login.domain.model.InvalidCredentialsException
 import com.mahmoudshaaban.toxic.login.domain.model.LoginResult
+import com.mahmoudshaaban.toxic.login.domain.repository.AuthTokenRepository
 import com.mahmoudshaaban.toxic.login.domain.repository.LoginRepository
 
 /**
  * a concrete implementation of a [ProdCredentialUseCaseLogin] that will request logging in via the [loginRepository]
  */
 class ProdCredentialUseCaseLogin(
-    private val loginRepository: LoginRepository
+    private val loginRepository: LoginRepository,
+    private val tokenRepository: AuthTokenRepository
 ) : CredentialUseCase {
     override suspend fun invoke(credentials: Credentials): LoginResult {
         val repoResult = loginRepository.loginWithCredentials(credentials)
@@ -18,6 +20,7 @@ class ProdCredentialUseCaseLogin(
         return when (repoResult) {
             is Result.Success -> {
                 // Store the auth token here
+                tokenRepository.storeToken(repoResult.data.token)
                 return LoginResult.Success
             }
             is Result.Error -> {
