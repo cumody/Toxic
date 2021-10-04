@@ -1,4 +1,4 @@
-package com.mahmoudshaaban.toxic.ui.login
+package com.mahmoudshaaban.toxic.login.ui
 
 import android.content.res.Configuration
 import androidx.compose.foundation.Image
@@ -17,18 +17,18 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.mahmoudshaaban.toxic.R
-import com.mahmoudshaaban.toxic.ui.components.PrimaryButton
-import com.mahmoudshaaban.toxic.ui.components.SecondaryButton
-import com.mahmoudshaaban.toxic.ui.components.ToxicTextField
-import com.mahmoudshaaban.toxic.ui.core.VerticalSpacer
-import com.mahmoudshaaban.toxic.ui.theme.ToxicTheme
+import com.mahmoudshaaban.toxic.core.ui.components.PrimaryButton
+import com.mahmoudshaaban.toxic.core.ui.components.SecondaryButton
+import com.mahmoudshaaban.toxic.core.ui.components.ToxicTextField
+import com.mahmoudshaaban.toxic.core.ui.core.VerticalSpacer
+import com.mahmoudshaaban.toxic.core.ui.theme.ToxicTheme
 
 private const val APP_LOGO_WIDTH_PERCENTAGE = 0.75F
 
 /**
  * This[LoginContent] handles all configuration that happens for this screen
  * @param[viewState] the current state of the screen to render
- * @param[onUsernameChanged] A callback invoked when the user enters their username.
+ * @param[onEmailChanged] A callback invoked when the user enters their username.
  * @param[onPasswordChanged] A callback invoked when the user enter their password.
  * @param[onLoginClicked] A callback invoked when the user clicks the logins button.
  * @paramp[onSignUpClicked] A callback invoked when the user clicks the sign up button
@@ -38,7 +38,7 @@ private const val APP_LOGO_WIDTH_PERCENTAGE = 0.75F
 @Composable
 fun LoginContent(
     viewState: LoginViewState,
-    onUsernameChanged: (String) -> Unit,
+    onEmailChanged: (String) -> Unit,
     onPasswordChanged: (String) -> Unit,
     onLoginClicked: () -> Unit,
     onSignUpClicked: () -> Unit
@@ -59,9 +59,9 @@ fun LoginContent(
 
             Spacer(modifier = Modifier.weight(1F))
 
-            UsernameInput(
-                text = viewState.userName,
-                onTextChanged = onUsernameChanged
+            EmailInput(
+                text = viewState.email,
+                onTextChanged = onEmailChanged
             )
 
             VerticalSpacer(height = 12.dp)
@@ -118,13 +118,13 @@ private fun PasswordInput(
 }
 
 @Composable
-private fun UsernameInput(
+private fun EmailInput(
     text: String,
     onTextChanged: (String) -> Unit
 ) {
     ToxicTextField(
         text = text,
-        onTextChanged = onTextChanged, textLabel = stringResource(R.string.username)
+        onTextChanged = onTextChanged, textLabel = stringResource(R.string.Email)
     )
 }
 
@@ -150,14 +150,14 @@ private fun AppLogo() {
 private fun EmptyLoginScreenPreview() {
 
     val viewState = LoginViewState(
-        userName = "",
+        email = "",
         password = ""
     )
 
     ToxicTheme {
         LoginContent(
             viewState = viewState,
-            onUsernameChanged = {},
+            onEmailChanged = {},
             onPasswordChanged = {},
             onLoginClicked = {},
             onSignUpClicked = {}

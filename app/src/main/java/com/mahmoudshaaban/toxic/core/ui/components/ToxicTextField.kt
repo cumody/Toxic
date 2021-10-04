@@ -1,4 +1,4 @@
-package com.mahmoudshaaban.toxic.ui.components
+package com.mahmoudshaaban.toxic.core.ui.components
 
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -10,8 +10,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.mahmoudshaaban.toxic.R
-import com.mahmoudshaaban.toxic.ui.theme.TextFieldShape
-import com.mahmoudshaaban.toxic.ui.theme.ToxicTheme
+import com.mahmoudshaaban.toxic.core.ui.theme.TextFieldShape
+import com.mahmoudshaaban.toxic.core.ui.theme.ToxicTheme
 
 /**
 * This is a custom implementation of an [OutlinedTextField] to ensure that it has the TOA branding

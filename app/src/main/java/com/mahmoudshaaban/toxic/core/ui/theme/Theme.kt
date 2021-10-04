@@ -1,4 +1,4 @@
-package com.mahmoudshaaban.toxic.ui.theme
+package com.mahmoudshaaban.toxic.core.ui.theme
 
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable

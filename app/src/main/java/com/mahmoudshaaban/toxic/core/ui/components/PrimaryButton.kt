@@ -1,4 +1,4 @@
-package com.mahmoudshaaban.toxic.ui.components
+package com.mahmoudshaaban.toxic.core.ui.components
 
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -15,8 +15,8 @@ import androidx.compose.ui.text.intl.Locale
 import androidx.compose.ui.text.toUpperCase
 import androidx.compose.ui.tooling.preview.Preview
 import com.mahmoudshaaban.toxic.R
-import com.mahmoudshaaban.toxic.ui.theme.ButtonShape
-import com.mahmoudshaaban.toxic.ui.theme.ToxicTheme
+import com.mahmoudshaaban.toxic.core.ui.theme.ButtonShape
+import com.mahmoudshaaban.toxic.core.ui.theme.ToxicTheme
 
 /**
  * This is a custom [Button] that provides the shape and styling expected

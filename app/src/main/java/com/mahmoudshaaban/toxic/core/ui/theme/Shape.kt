@@ -1,5 +1,5 @@
 @file:Suppress("MagicNumber")
-package com.mahmoudshaaban.toxic.ui.theme
+package com.mahmoudshaaban.toxic.core.ui.theme
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Shapes

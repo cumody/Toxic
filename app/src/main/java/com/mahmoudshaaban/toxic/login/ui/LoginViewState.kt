@@ -1,12 +1,12 @@
-package com.mahmoudshaaban.toxic.ui.login
+package com.mahmoudshaaban.toxic.login.ui
 
 /**
  * [LoginViewState] this defines the state of login screen
- * @param[name] the current text entered in the username field.
+ * @param[email] the current text entered in the email field.
  * @param[password] the current password in the password field
  *
  */
 data class LoginViewState(
-    val userName: String,
-    val password: String
+    val email: String,
+    val password: String,
 )

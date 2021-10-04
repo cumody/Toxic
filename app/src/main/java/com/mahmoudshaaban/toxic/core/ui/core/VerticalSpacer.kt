@@ -1,4 +1,4 @@
-package com.mahmoudshaaban.toxic.ui.core
+package com.mahmoudshaaban.toxic.core.ui.core
 
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
