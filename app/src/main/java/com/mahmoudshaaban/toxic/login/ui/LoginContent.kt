@@ -124,7 +124,7 @@ private fun EmailInput(
 ) {
     ToxicTextField(
         text = text,
-        onTextChanged = onTextChanged, textLabel = stringResource(R.string.Email)
+        onTextChanged = onTextChanged, textLabel = stringResource(R.string.email)
     )
 }
 

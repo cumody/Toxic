@@ -12,8 +12,7 @@ sealed class LoginResult {
     */
 
     object Success: LoginResult()
-
-
+    
 
     object InvalidCredentials : LoginResult()
 
