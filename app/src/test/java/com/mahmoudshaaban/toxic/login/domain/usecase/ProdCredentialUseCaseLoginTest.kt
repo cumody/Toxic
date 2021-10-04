@@ -2,8 +2,8 @@ package com.mahmoudshaaban.toxic.login.domain.usecase
 
 import com.google.common.truth.Truth.assertThat
 import com.mahmoudshaaban.toxic.core.data.Result
-import com.mahmoudshaaban.toxic.fakes.FakeTokenRepository
 import com.mahmoudshaaban.toxic.fakes.FakeLoginRepository
+import com.mahmoudshaaban.toxic.fakes.FakeTokenRepository
 import com.mahmoudshaaban.toxic.login.domain.model.AuthToken
 import com.mahmoudshaaban.toxic.login.domain.model.Credentials
 import com.mahmoudshaaban.toxic.login.domain.model.Email
@@ -33,12 +33,10 @@ class ProdCredentialUseCaseLoginTest {
     private lateinit var tokenRepository: FakeTokenRepository
 
     @Before
-    fun setUp(){
+    fun setUp() {
         loginRepository = FakeLoginRepository()
         tokenRepository = FakeTokenRepository()
     }
-
-
 
     @Test
     fun testSuccessfulLogin() = runBlockingTest {
