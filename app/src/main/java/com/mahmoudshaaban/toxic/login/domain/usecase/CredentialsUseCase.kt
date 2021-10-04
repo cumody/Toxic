@@ -14,7 +14,7 @@ value class Password(private val password: String)
  * this use case consumes any information required to log in the user , and attempts to do so.
  */
 
-interface LoginUseCase {
+interface CredentialsUseCase {
 
     suspend operator fun invoke(
         email: Email,
