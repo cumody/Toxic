@@ -5,5 +5,9 @@ package com.mahmoudshaaban.toxic.login.domain.model
  */
 @Suppress("UnusedPrivateMember")
 data class LoginResponse(
+
     val token: Token
+
+    private val authToken: String
+
 )
