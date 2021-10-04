@@ -1,6 +1,5 @@
 package com.mahmoudshaaban.toxic.login.domain.model
 
-
 /**
  * A Collection of possible results for an attempt to login the user
  */
@@ -9,10 +8,9 @@ sealed class LoginResult {
 
     /**
      * to attempt login was successful
-    */
+     */
 
-    object Success: LoginResult()
-    
+    object Success : LoginResult()
 
     object InvalidCredentials : LoginResult()
 
