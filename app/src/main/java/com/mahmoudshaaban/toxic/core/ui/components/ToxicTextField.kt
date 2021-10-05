@@ -11,6 +11,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
+import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.mahmoudshaaban.toxic.R
@@ -33,7 +34,8 @@ fun ToxicTextField(
     onTextChanged: (String) -> Unit,
     modifier: Modifier = Modifier,
     textLabel: String,
-    errorMessage: String? = null
+    errorMessage: String? = null,
+    visualTransfomation: VisualTransformation = VisualTransformation.None
 ) {
     Column {
         OutlinedTextField(
@@ -44,7 +46,8 @@ fun ToxicTextField(
             modifier = modifier
                 .heightIn(dimensionResource(id = R.dimen.text_field_height))
                 .fillMaxWidth(),
-            isError = (errorMessage != null)
+            isError = (errorMessage != null),
+            visualTransformation = visualTransfomation
         )
 
         if (errorMessage != null) {
