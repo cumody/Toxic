@@ -14,6 +14,7 @@ class FakeTokenRepository {
     fun verifyTokenStored(token: Token) {
         coVerify {
             mock.storeToken(token)
+
         }
     }
 
