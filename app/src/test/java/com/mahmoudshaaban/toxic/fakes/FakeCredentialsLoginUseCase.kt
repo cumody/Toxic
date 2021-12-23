@@ -18,6 +18,5 @@ class FakeCredentialsLoginUseCase {
         coEvery {
             mock.invoke(credentials = credentials)
         } returns result
-
     }
 }
