@@ -6,7 +6,7 @@ import com.mahmoudshaaban.toxic.login.domain.usecase.CredentialUseCase
 import io.mockk.coEvery
 import io.mockk.mockk
 
-class FakeCredentialsUseCase {
+class FakeCredentialsLoginUseCase {
 
     val mock: CredentialUseCase = mockk()
 

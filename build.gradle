@@ -28,6 +28,8 @@ buildscript {
     }
 }
 
+apply from: "buildscripts/githooks.gradle"
+
 subprojects {
     apply from: "../buildscripts/ktlint.gradle"
     apply from: "../buildscripts/detekt.gradle"
@@ -36,4 +38,9 @@ subprojects {
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+
+afterEvaluate {
+    // We install the hook at the first occasion
+    tasks['clean'].dependsOn installGitHooks
 }

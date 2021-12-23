@@ -1,4 +1,4 @@
-#!/bin/sh
+#!C:/Program\ Files/Git/usr/bin/sh.exe
 
 echo "Running static analysis."
 

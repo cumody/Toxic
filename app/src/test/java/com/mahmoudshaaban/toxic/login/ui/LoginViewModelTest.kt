@@ -10,14 +10,13 @@ class LoginViewModelTest {
     private lateinit var testRobot: LoginViewModelRobot
 
     private val defaultCredentials = Credentials(
-        email = Email("mshaaban@hosty.com"),
-        password = Password("hunter2")
+        Email("testy@mctestface.com"),
+        Password("Hunter2"),
     )
 
     @Before
     fun setUp() {
         testRobot = LoginViewModelRobot()
-
     }
 
     @Test
@@ -37,8 +36,4 @@ class LoginViewModelTest {
             .enterPassword(credentials.password.value)
             .assertViewState(LoginViewState.Active(credentials))
     }
-
-
 }
-
-
