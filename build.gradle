@@ -19,7 +19,7 @@ buildscript {
 
         }
     dependencies {
-        classpath "com.android.tools.build:gradle:7.0.0"
+        classpath 'com.android.tools.build:gradle:7.0.2'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.10"
         classpath "org.jlleitschuh.gradle:ktlint-gradle:$ktlintPluginVersion"
         classpath "io.gitlab.arturbosch.detekt:detekt-gradle-plugin:$detektVersion"
@@ -27,6 +27,8 @@ buildscript {
         // in the individual module build.gradle files
     }
 }
+
+apply from: "buildscripts/githooks.gradle"
 
 subprojects {
     apply from: "../buildscripts/ktlint.gradle"
@@ -36,4 +38,9 @@ subprojects {
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+
+afterEvaluate {
+    // We install the hook at the first occasion
+    tasks['clean'].dependsOn installGitHooks
 }
